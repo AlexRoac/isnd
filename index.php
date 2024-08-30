@@ -14,13 +14,13 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="/isnd/index.html">Sistemas y Negocios Digitales</a></h1>
+						<h1><a href="/index.php">Sistemas y Negocios Digitales</a></h1>
 						<nav class="links">
 							<ul>
 								<li><a href="#">Inicio</a></li>
 								<li><a href="#">Novedades</a></li>
 								<li><a href="#">Foros</a></li>
-								<li><a href="/proyectos.html">Proyectos</a></li>
+								<li><a href="/proyectos.php">Proyectos</a></li>
 								<li><a href="#">Certificaciones</a></li>
 							</ul>
 						</nav>
