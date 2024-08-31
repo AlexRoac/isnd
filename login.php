@@ -94,7 +94,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.html">Sistemas y Negocios Digitales</a></h1>
+						<h1><a href="index.php">Sistemas y Negocios Digitales</a></h1>
 					</header>
 
 				<!-- Main -->
@@ -112,7 +112,7 @@
                                             <form action="#">
                                                 <input id="username" type="text" placeholder="Username" required>
                                                 <input id="password" type="password" placeholder="Password" required>
-                                                <button id="loginBtn" class="botonpro" type="submit">Login</button>
+												<button id="loginBtn" class="botonpro" type="submit">Login</button>
                                             </form>
                                             <p>Don't have an account? <a href="#">Sign up</a></p>
                                         </div>

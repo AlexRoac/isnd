@@ -82,7 +82,7 @@
 						<!-- Actions -->
 							<section>
 								<ul class="actions stacked">
-									<li><a href="/login.html" class="button large fit">Log In</a></li>
+									<li><a href="/login.php" class="button large fit">Log In</a></li>
 								</ul>
 							</section>
 
