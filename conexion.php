@@ -1,12 +1,15 @@
 <?php
-    define('DB_SERVER', 'localhost');
-    define('DB_USERNAME', 'root');
-    define('DB_PASSWORD', 'root');
-    define('DB_NAME', 'mydb');
+// Datos de conexión
+$host = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "mydb";
 
-    $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+// Crear la conexión
+$link = mysqli_connect($host, $username, $password, $dbname);
 
-    if($link === false){
-        die("ERROR EN LA CONEXION" . mysqli_connect_error());
-    }
+// Verificar la conexión
+if($link === false){
+    die("ERROR: No se pudo conectar a la base de datos. " . mysqli_connect_error());
+}
 ?>

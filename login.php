@@ -1,3 +1,8 @@
+<?php
+    
+    require "code-login.php"
+
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -109,7 +114,7 @@
 									</div>
                                         <div class="login-container">
                                             
-                                            <form action="#">
+                                            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                                                 <input id="username" type="text" placeholder="Username" required>
                                                 <input id="password" type="password" placeholder="Password" required>
 												<button id="loginBtn" class="botonpro" type="submit">Login</button>

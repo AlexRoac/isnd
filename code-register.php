@@ -5,4 +5,8 @@
     $id = $username = $email = $password = "";
     $id_err = $username_err = $email_err = $password_err = "";
 
+    if($_SERVE["REQUEST_METHOD"] == "POST"){
+        
+    }
+
 ?>
