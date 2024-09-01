@@ -1,12 +1,11 @@
-<?php
-    
-    require "code-login.php"
-
-?>
 <!DOCTYPE HTML>
 <html>
 	<head>
 		<title>Login</title>
+		<?php
+		include("conexion.php");
+		include("controlador.php");
+		?>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -114,10 +113,10 @@
 									</div>
                                         <div class="login-container">
                                             
-                                            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                                                <input id="username" type="text" placeholder="Username" required>
-                                                <input id="password" type="password" placeholder="Password" required>
-												<button id="loginBtn" class="botonpro" type="submit">Login</button>
+                                            <form action="" method="post">
+                                                <input id="username" type="text" placeholder="Username" required name="username">
+                                                <input id="input" type="password" placeholder="Password" required name = "password">
+												<button name="loginBtn" class="botonpro" type="submit">Login</button>
                                             </form>
                                             <p>Don't have an account? <a href="#">Sign up</a></p>
                                         </div>
@@ -441,7 +440,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 							</article>
 						-->
 		<!-- Scripts -->
-			<script src="assets/js/login.js"></script>
+			<!-- Scripts <script src="assets/js/login.js"></script>-->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
