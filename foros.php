@@ -176,20 +176,7 @@
 
             <!-- Contenedor para mostrar publicaciones -->
                 <?php
-                // Configuración de la base de datos
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
-                $database = "isnddb";
-
-                // Crear conexión
-                $conn = new mysqli($servername, $username, $password, $database);
-
-                // Verificar conexión
-                if ($conn->connect_error) {
-                    die("Conexión fallida: " . $conn->connect_error);
-                }
-
+                include 'conexion.php';
                 // Consultar publicaciones
                 $sql = "SELECT * FROM posts ORDER BY fecha DESC";
                 $result = $conn->query($sql);

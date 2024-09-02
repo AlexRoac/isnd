@@ -1,17 +1,5 @@
 <?php
-// Configuración de la base de datos
-$servername = "162.241.2.36";
-$username = "issmarco_socialisnd";
-$password = "F5dUOIwy(chr";
-$database = "issmarco_socialisnd";
-
-// Crear conexión
-$conn = new mysqli($servername, $username, $password, $database);
-
-// Verificar conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+include 'conexion.php';
 
 // Procesar el formulario cuando se envíe
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
