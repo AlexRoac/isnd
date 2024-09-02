@@ -1,9 +1,9 @@
 <?php
 // Configuración de la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "isnddb";
+$servername = "162.241.2.36";
+$username = "issmarco_socialisnd";
+$password = "F5dUOIwy(chr";
+$database = "issmarco_socialisnd";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $database);

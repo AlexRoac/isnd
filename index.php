@@ -7,7 +7,7 @@
 		session_start();
 
 		if (!isset($_SESSION['username'])) {
-			header('Location: index.html'); // Redirigir al formulario de login si no hay sesión
+			header('Location: login.php'); // Redirigir al formulario de login si no hay sesión
 			exit;
 		}
 		?>

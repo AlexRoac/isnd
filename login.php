@@ -11,6 +11,19 @@
 	</head>
 	<body class="is-preload">
         <style>
+			.modal {
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+			}
             body {
                 font-family: Arial, sans-serif;
                 background-color: #f7f7f7;
@@ -89,7 +102,24 @@
                 .login-container button {
                     font-size: 14px;
                 }
+				.hidden {
+            	display: none;
+       			}		
+				   .modal {
+				position: fixed;
+				z-index: 1;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+				background-color: rgba(0, 0, 0, 0.4);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+        		}
             }
+			
         </style>
 
 		<!-- Wrapper -->
@@ -108,7 +138,7 @@
 								<header>
 									<div class="title">
 										<h2><a>¡Bienvenidos, ingenieros en Sistemas y Negocios Digitales!</a></h2>
-										<h3>!Inicia Sesión!</h3>
+										<h3>¡Inicia Sesión!</h3>
 									</div>
                                         <div class="login-container">
                                             

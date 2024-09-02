@@ -2,12 +2,12 @@
 session_start();
 
 // Conectar a la base de datos
-$servername = "localhost";  // Cambia esto si tu servidor de base de datos es diferente
-$username = "root";   // Cambia esto por tu usuario de la base de datos
-$password = "root"; // Cambia esto por tu contraseña de la base de datos
-$dbname = "mydb";
+$servername = "162.241.2.36";
+$username = "issmarco_socialisnd";
+$password = "F5dUOIwy(chr";
+$database = "issmarco_socialisnd";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $database);
 
 // Verificar conexión
 if ($conn->connect_error) {
@@ -44,9 +44,14 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     }
 
     $stmt->close();
+    echo "<article class='post' style='position: fixed; z-index: 1; justify-content: center;'>";
+	echo "    <header>";
+	echo "        <div class='title' >";
+    echo "            <h2>" . $response['message']  . "</a></h2>";
+    echo "        </div>";
+    echo "    </header>";
+    echo "</article>";
 }
 
 $conn->close();
-
-echo json_encode($response);
 ?>
