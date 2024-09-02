@@ -3,6 +3,14 @@
 <html>
 	<head>
 		<title>ISND</title>
+		<?php
+		session_start();
+
+		if (!isset($_SESSION['username'])) {
+			header('Location: index.html'); // Redirigir al formulario de login si no hay sesión
+			exit;
+		}
+		?>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -23,6 +31,7 @@
 								<li><a href="#">Foros</a></li>
 								<li><a href="/proyectos.php">Proyectos</a></li>
 								<li><a href="#">Certificaciones</a></li>
+								<li><a class ="user">Hola, <?php echo $_SESSION['username']; ?></a></li>
 							</ul>
 						</nav>
 						<nav class="main">
