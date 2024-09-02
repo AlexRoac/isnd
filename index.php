@@ -28,7 +28,7 @@
 							<ul>
 								<li><a href="#">Inicio</a></li>
 								<li><a href="#">Novedades</a></li>
-								<li><a href="#">Foros</a></li>
+								<li><a href="foros.php">Foros</a></li>
 								<li><a href="/proyectos.php">Proyectos</a></li>
 								<li><a href="#">Certificaciones</a></li>
 								<li><a class ="user">Hola, <?php echo $_SESSION['username']; ?></a></li>
