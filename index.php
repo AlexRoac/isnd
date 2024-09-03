@@ -35,7 +35,7 @@
 								<a href="single.html" class="image featured"><img src="images/fotooopp.jpg" alt="" /></a>
 								<p>Hoy inician una emocionante travesía que les permitirá transformar ideas en soluciones innovadoras, y datos en estrategias que revolucionarán el mundo digital. Están en el lugar perfecto para explorar su pasión por la tecnología y el negocio, para aprender, crear, y sobre todo, crecer como profesionales y como personas.<br>
 
-									<br>Recuerden que cada desafío es una oportunidad para aprender, y cada error, un paso más hacia el éxito. Mantengan la curiosidad viva, colaboren con sus compañeros, y no duden en preguntar, experimentar y salir de su zona de confort.<br>
+									<br>Recuerden que cada desafío es una oportunidad para aprender, y cada error, un paso más hacia el éxito. Mantengan la curiosidad viva, colaboren con compañeros, y no duden en preguntar, experimentar y salir de su zona de confort.<br>
 									
 									<br>¡El futuro digital está en sus manos! Estamos emocionados de acompañarlos en este viaje y ver todo lo que lograrán. ¡Mucho éxito en este nuevo capítulo de sus vidas!</p>
 								<footer>
