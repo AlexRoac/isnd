@@ -4,12 +4,6 @@
 	<head>
 		<title>ISND</title>
 		<?php
-		session_start();
-
-		if (!isset($_SESSION['username'])) {
-			header('Location: login.php'); // Redirigir al formulario de login si no hay sesión
-			exit;
-		}
 		?>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -21,82 +15,7 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<h1><a href="/index.php">Sistemas y Negocios Digitales</a></h1>
-						<nav class="links">
-							<ul>
-								<li><a href="#">Inicio</a></li>
-								<li><a href="#">Novedades</a></li>
-								<li><a href="foros.php">Foros</a></li>
-								<li><a href="/proyectos.php">Proyectos</a></li>
-								<li><a href="#">Certificaciones</a></li>
-								<li><a class ="user">Hola, <?php echo $_SESSION['username']; ?></a></li>
-							</ul>
-						</nav>
-						<nav class="main">
-							<ul>
-								<li class="search">
-									<a class="fa-search" href="#search">Search</a>
-									<form id="search" method="get" action="#">
-										<input type="text" name="query" placeholder="Search" />
-									</form>
-								</li>
-								<li class="menu">
-									<a class="fa-bars" href="#menu">Menu</a>
-								</li>
-							</ul>
-						</nav>
-					</header>
-
-				<!-- Menu -->
-					<section id="menu">
-
-						<!-- Search -->
-							<section>
-								<form class="search" method="get" action="#">
-									<input type="text" name="query" placeholder="Search" />
-								</form>
-							</section>
-
-						<!-- Links -->
-							<section>
-								<ul class="links">
-									<li>
-										<a href="#">
-											<h3>Perfil</h3>
-											<p>Breve explicacion de ti.</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<h3>Proyectos</h3>
-											<p>Aqui los proyectos en los que participas.</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<h3>Configuracion</h3>
-											<p>Haz a tu gusto esta pagina!</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<h3>Ayuda</h3>
-											<p>Reporta alguna injusticia o queja.</p>
-										</a>
-									</li>
-								</ul>
-							</section>
-
-						<!-- Actions -->
-							<section>
-								<ul class="actions stacked">
-									<li><a href="/login.php" class="button large fit">Log In</a></li>
-								</ul>
-							</section>
-
-					</section>
+				<?php include 'navbar.php'; ?>
 
 				<!-- Main -->
 					<div id="main">

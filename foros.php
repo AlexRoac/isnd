@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>ISND</title>
+    <?php
+		?>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -63,81 +65,7 @@
     <!-- Wrapper -->
     <div id="wrapper">
 
-        <!-- Header -->
-        <header id="header">
-            <h1><a href="/index.php">Sistemas y Negocios Digitales</a></h1>
-            <nav class="links">
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Novedades</a></li>
-                    <li><a href="#">Foros</a></li>
-                    <li><a href="/proyectos.php">Proyectos</a></li>
-                    <li><a href="#">Certificaciones</a></li>
-                </ul>
-            </nav>
-            <nav class="main">
-                <ul>
-                    <li class="search">
-                        <a class="fa-search" href="#search">Search</a>
-                        <form id="search" method="get" action="#">
-                            <input type="text" name="query" placeholder="Search" />
-                        </form>
-                    </li>
-                    <li class="menu">
-                        <a class="fa-bars" href="#menu">Menu</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-
-        <!-- Menu -->
-        <section id="menu">
-
-            <!-- Search -->
-            <section>
-                <form class="search" method="get" action="#">
-                    <input type="text" name="query" placeholder="Search" />
-                </form>
-            </section>
-
-            <!-- Links -->
-            <section>
-                <ul class="links">
-                    <li>
-                        <a href="#">
-                            <h3>Perfil</h3>
-                            <p>Breve explicación de ti.</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <h3>Proyectos</h3>
-                            <p>Aquí los proyectos en los que participas.</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <h3>Configuración</h3>
-                            <p>Haz a tu gusto esta página!</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <h3>Ayuda</h3>
-                            <p>Reporta alguna injusticia o queja.</p>
-                        </a>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Actions -->
-            <section>
-                <ul class="actions stacked">
-                    <li><a href="/login.php" class="button large fit">Log In</a></li>
-                </ul>
-            </section>
-
-        </section>
+        <?php include 'navbar.php'; ?>
 
         <!-- Main -->
         <div id="main">

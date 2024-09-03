@@ -3534,6 +3534,7 @@ input, select, textarea {
 		visibility: hidden;
 		width: 25em;
 		z-index: 10002;
+		z-index: 2;
 	}
 
 		#menu > * {

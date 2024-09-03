@@ -9,18 +9,20 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $input_password = $_POST['password'];
 
     // Preparar y ejecutar la consulta
-    $stmt = $conn->prepare("SELECT id, nombre, password FROM usuarios WHERE nombre = ?");
+    $stmt = $conn->prepare("SELECT id, nombre, password, foto_perfil FROM usuarios WHERE nombre = ?");
     $stmt->bind_param("s", $input_username);
     $stmt->execute();
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        $stmt->bind_result($id, $nombre, $stored_password);
+        $stmt->bind_result($id, $nombre, $stored_password, $foto_perfil);
         $stmt->fetch();
 
-        // Comparar directamente las contraseñas en texto plano
+        // Comparar las contraseñas
         if ($input_password === $stored_password) {
             $_SESSION['username'] = $nombre;
+            // Guardar la ruta de la foto de perfil en la sesión
+            $_SESSION['profile_picture'] = $foto_perfil;
             header("Location: index.php");
             exit;
         } else {
@@ -31,6 +33,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     }
 
     $stmt->close();
+
     echo "<article class='post' style='position: fixed; z-index: 1; justify-content: center;'>";
     echo "    <header>";
     echo "        <div class='title'>";
@@ -41,4 +44,5 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 }
 
 $conn->close();
+
 ?>
