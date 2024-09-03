@@ -186,7 +186,7 @@
 						echo "<article class='post'>";
 						echo "    <header>";
 						echo "        <div class='title'>";
-						echo "            <h2><a href='post.php?id=" . htmlspecialchars($row['id']) . "'>" . htmlspecialchars($row['titulo']) . "</a></h2>";
+						echo "            <h2><a href='posts.php?id=" . htmlspecialchars($row['id']) . "'>" . htmlspecialchars($row['titulo']) . "</a></h2>";
 						echo "            <p>" . htmlspecialchars($row['subtitulo']) . "</p>";
 						echo "        </div>";
 						echo "        <div class='meta'>";
@@ -196,14 +196,14 @@
 						echo "    </header>";
 						
 						if ($row['imagen']) {
-							echo "    <a href='post.php?id=" . htmlspecialchars($row['id']) . "'><img src='" . htmlspecialchars($row['imagen']) . "' alt='' class='postimg'/></a>";
+							echo "    <a href='posts.php?id=" . htmlspecialchars($row['id']) . "'><img src='" . htmlspecialchars($row['imagen']) . "' alt='' class='postimg'/></a>";
 						}
 						
 						echo "    <p>" . htmlspecialchars($row['contenido']) . "</p>";
 						
 						echo "    <footer>";
 						echo "        <ul class='actions'>";
-						echo "            <li><a href='post.php?id=" . htmlspecialchars($row['id']) . "' class='button large'>Continue Reading</a></li>";
+						echo "            <li><a href='posts.php?id=" . htmlspecialchars($row['id']) . "' class='button large'>Continue Reading</a></li>";
 						echo "        </ul>";
 						echo "        <ul class='stats'>";
 						echo "            <!-- Aquí puedes agregar más estadísticas si lo deseas -->";
