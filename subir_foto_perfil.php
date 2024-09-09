@@ -17,45 +17,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_SESSION['username'];
 
     // Manejo de la subida de foto
-    if (isset($_FILES["profile_picture"])) {
+    if (isset($_FILES["profile_picture"]) && $_FILES["profile_picture"]["error"] == 0) {
         // Directorio para subir la imagen
         $target_dir = "uploads/";
-        $target_file = $target_dir . basename($_FILES["profile_picture"]["name"]);
-        $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+        $fileTmpPath = $_FILES["profile_picture"]["tmp_name"];
+        $fileMimeType = mime_content_type($fileTmpPath);
 
         // Verificar si el archivo es una imagen real
-        $check = getimagesize($_FILES["profile_picture"]["tmp_name"]);
-        if ($check !== false) {
-            $uploadOk = 1;
-        } else {
+        $check = getimagesize($fileTmpPath);
+        if ($check === false) {
             echo "El archivo no es una imagen.";
-            $uploadOk = 0;
+            exit();
         }
 
-        // Verificar si el archivo ya existe
-        if (file_exists($target_file)) {
-            echo "Lo siento, el archivo ya existe.";
-            $uploadOk = 0;
+        // Crear una imagen a partir del archivo dependiendo de su tipo
+        switch ($fileMimeType) {
+            case 'image/jpeg':
+                $image = imagecreatefromjpeg($fileTmpPath);
+                break;
+            case 'image/png':
+                $image = imagecreatefrompng($fileTmpPath);
+                break;
+            case 'image/gif':
+                $image = imagecreatefromgif($fileTmpPath);
+                break;
+            default:
+                echo "Lo siento, solo se permiten archivos JPG, JPEG, PNG y GIF.";
+                exit();
         }
 
-        // Permitir ciertos formatos de archivo
-        if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
-            echo "Lo siento, solo se permiten archivos JPG, JPEG, PNG y GIF.";
-            $uploadOk = 0;
-        }
+        if ($image) {
+            // Generar un nombre único para el archivo .webp
+            $outputFile = $target_dir . uniqid('profile_', true) . '.webp';
 
-        // Verificar si $uploadOk es 0 debido a algún error
-        if ($uploadOk == 0) {
-            echo "Lo siento, tu archivo no fue subido.";
-        } else {
-            // Intentar mover el archivo a la carpeta de destino
-            if (move_uploaded_file($_FILES["profile_picture"]["tmp_name"], $target_file)) {
+            // Guardar la imagen como .webp (calidad 80)
+            if (imagewebp($image, $outputFile, 80)) {
                 // Actualizar la ruta de la foto en la base de datos
                 $stmt = $conn->prepare("UPDATE usuarios SET foto_perfil = ? WHERE nombre = ?");
-                $stmt->bind_param("ss", $target_file, $username);
+                $stmt->bind_param("ss", $outputFile, $username);
                 if ($stmt->execute()) {
-                    $_SESSION['profile_picture'] = $target_file; // Actualizar la ruta en la sesión
+                    $_SESSION['profile_picture'] = $outputFile; // Actualizar la ruta en la sesión
                     echo "Foto de perfil actualizada correctamente.";
                     // Redirigir a la página principal después de la actualización
                     header("Location: index.php");
@@ -65,8 +66,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
                 $stmt->close();
             } else {
-                echo "Lo siento, hubo un error al subir tu archivo.";
+                echo "Lo siento, hubo un error al guardar la imagen .webp.";
             }
+
+            // Liberar memoria
+            imagedestroy($image);
+        } else {
+            echo "Error al crear la imagen desde el archivo subido.";
         }
     }
 
