@@ -17,7 +17,7 @@ $profile_picture = $_SESSION['profile_picture'];
             <li><a href="#">Novedades</a></li>
             <li><a href="foros.php">Foros</a></li>
             <li><a href="proyectos.php">Proyectos</a></li>
-            <li><a href="#">Certificaciones</a></li>
+            <li><a href="certificaciones.php">Certificaciones</a></li>
         </ul>
     </nav>
     <nav class="main">
