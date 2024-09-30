@@ -131,7 +131,7 @@
 								<input id="input" type="password" placeholder="Password" required name="password">
 								<button name="loginBtn" class="botonpro" type="submit">Login</button>
 							</form>
-							<p>Don't have an account? <a href="#">Sign up</a></p>
+							<p>Don't have an account? <a href="register.php">Sign up</a></p>
 						</div>
 						<div id="myModal" class="modal hidden">
 							<div class="modal-content">
